@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     # ex: /polls/
-    path('', views.create_post, name='index'),
+    path('get', views.get, name='get'),
+    path('', views.create_post, name='create'),
 ]
