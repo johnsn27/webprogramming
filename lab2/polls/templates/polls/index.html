@@ -1,0 +1,16 @@
+<form method="POST" id="post-form">
+  {% csrf_token %}
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" id="title" placeholder="Title">
+  </div>
+  <div class="form-group">
+    <label>Summary</label>
+    <textarea class="form-control" id="description" placeholder="Description"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Average Rating</label>
+    <textarea class="form-control" id="averageRating" placeholder="Average Rating"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
