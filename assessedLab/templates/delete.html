@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}
+Index
+{% endblock title %}
+{% block content %}
+<div>
+    <p>I'm in the index!</p>
+    <form method="POST" id="post-form">
+        <div class="form-group">
+            <label for="exampleInputEmail1">ID</label>
+            <input type="text" class="form-control" id="pk" placeholder="id">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/">Back to index</a>
+    </form>
+</div>
+<script>
+    $(document).ready(function () {
+        $(document).on('submit', '#post-form',function(e){
+            var pk = $("#pk").val();
+            $.ajax({
+                url: "http://127.0.0.1:8000/deleteItem/" + pk,
+                type: "DELETE",
+                success: function (json) {
+                    document.getElementById("post-form").reset();
+                },
+                error: function (json) {
+                },
+            });
+
+        });
+    })
+</script>
+{% endblock content %}
